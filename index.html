@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolvido por Benicio - GelaTech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --card-bg: #ffffff;
+      --header-bg: #003366;
+      --footer-bg: #003366;
+      --accent: #25D366;
+    }
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --header-bg: #1c1c1c;
+      --footer-bg: #1c1c1c;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: var(--header-bg);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: white;
+    }
+    header img {
+      height: 60px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .toggle-darkmode {
+      background: none;
+      border: 2px solid white;
+      padding: 8px 15px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-darkmode:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #e6f2ff, #cce6ff);
+    }
+    .hero h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    .btn-whatsapp {
+      background-color: var(--accent);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe57;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .servico {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .servico:hover {
+      transform: translateY(-5px);
+    }
+    .servico i {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+    .mapa {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+    footer {
+      background-color: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      .hero h2 {
+        font-size: 30px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo GelaTech">
+    <h1>GelaTech Refrigerações</h1>
+    <button class="toggle-darkmode" onclick="toggleDarkMode()">Modo Escuro</button>
+  </header>
+  <div class="hero">
+    <h2>Conserto Rápido e Profissional</h2>
+    <p>Geladeiras, máquinas de lavar e refrigeração com atendimento especializado.</p>
+    <a class="btn-whatsapp" href="https://wa.me/5511991252421" target="_blank"><i class="fab fa-whatsapp"></i> Fale no WhatsApp</a>
+  </div>
+  <section>
+    <h2>Nossos Serviços</h2>
+    <div class="servicos">
+      <div class="servico">
+        <i class="fas fa-snowflake"></i>
+        <h3>Conserto de Geladeiras</h3>
+        <p>Diagnóstico e reparo de diversos modelos de geladeira com agilidade e garantia.</p>
+      </div>
+      <div class="servico">
+        <i class="fas fa-soap"></i>
+        <h3>Máquinas de Lavar</h3>
+        <p>Manutenção completa e substituição de peças originais para lavadoras de roupas.</p>
+      </div>
+      <div class="servico">
+        <i class="fas fa-fan"></i>
+        <h3>Refrigeração</h3>
+        <p>Instalação e suporte técnico para sistemas de refrigeração residenciais e comerciais.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Onde Estamos</h2>
+    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.565773553272!2d-46.60387252467041!3d-23.582178262329655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ba56fc6edcf%3A0xf179314a6fc4934d!2sAv.%20Peri%20Ronchetti%2C%20396%20-%20Vila%20Liviero%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004183-090!5e0!3m2!1spt-BR!2sbr!4v1714068505633!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+  <footer>
+    <p>© 2025 GelaTech - Todos os direitos reservados | WhatsApp: (11) 99125-2421</p>
+  </footer>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
